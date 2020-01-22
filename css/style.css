@@ -992,7 +992,7 @@
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  background-image: url("../../images/banner.jpg");
+  /*background-image: url("../../images/test_banner.gif");*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1004,10 +1004,10 @@
   position: relative;
   text-align: center;
   width: 100%; }
-  #banner input, #banner select, #banner textarea {
+/*  #banner input, #banner select, #banner textarea {
     color: #ffffff; }
   #banner a {
-    color: #ce1b28; }
+    color: #ffffff; }
   #banner strong, #banner b {
     color: #ffffff; }
   #banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
@@ -1022,8 +1022,8 @@
   #banner input[type="submit"],
   #banner input[type="reset"],
   #banner input[type="button"],
-  #banner button,
-  #banner .button {
+  #banner button,*/
+  /*#banner .button {
     background-color: transparent;
     box-shadow: inset 0 0 0 1px #ffffff;
     color: #ffffff !important; }
@@ -1032,8 +1032,8 @@
     #banner input[type="button"]:hover,
     #banner button:hover,
     #banner .button:hover {
-      box-shadow: inset 0 0 0 1px #ce1b28;
-      color: #ce1b28 !important; }
+      box-shadow: inset 0 0 0 1px #ffffff;
+      color: #ffffff !important; }
       #banner input[type="submit"]:hover:active,
       #banner input[type="reset"]:hover:active,
       #banner input[type="button"]:hover:active,
@@ -1060,8 +1060,8 @@
         #banner input[type="button"].primary:hover:active,
         #banner button.primary:hover:active,
         #banner .button.primary:hover:active {
-          background-color: #b71824; }
-  #banner label {
+          background-color: #b71824; }*/
+ /* #banner label {
     color: #ffffff; }
   #banner input[type="text"],
   #banner input[type="password"],
@@ -1082,13 +1082,13 @@
     #banner select:focus,
     #banner textarea:focus {
       border-color: #ce1b28;
-      box-shadow: 0 0 0 1px #ce1b28; }
-  #banner select {
+      box-shadow: 0 0 0 1px #ce1b28; }*/
+ /* #banner select {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.25)' /%3E%3C/svg%3E"); }
     #banner select option {
       color: rgba(255, 255, 255, 0.5);
-      background-color: #111111; }
-  #banner input[type="checkbox"] + label,
+      background-color: #111111; }*/
+  /*#banner input[type="checkbox"] + label,
   #banner input[type="radio"] + label {
     color: rgba(255, 255, 255, 0.5); }
     #banner input[type="checkbox"] + label:before,
@@ -1103,8 +1103,8 @@
   #banner input[type="checkbox"]:focus + label:before,
   #banner input[type="radio"]:focus + label:before {
     border-color: #ce1b28;
-    box-shadow: 0 0 0 1px #ce1b28; }
-  #banner ::-webkit-input-placeholder {
+    box-shadow: 0 0 0 1px #ce1b28; }*/
+/*  #banner ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.4) !important; }
   #banner :-moz-placeholder {
     color: rgba(255, 255, 255, 0.4) !important; }
@@ -1128,7 +1128,7 @@
     border-color: rgba(255, 255, 255, 0.25); }
   #banner .highlights .content {
     background: #111111;
-    box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.025); }
+    box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.025); }*/
   #banner .testimonials .content {
     background: #111111;
     box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.025); }
@@ -1158,7 +1158,7 @@
     text-decoration: none; }
     #banner a:hover {
       color: #ffffff; }
-  #banner video {
+  #banner img {
     -moz-transform: translateX(50%) translateY(50%);
     -webkit-transform: translateX(50%) translateY(50%);
     -ms-transform: translateX(50%) translateY(50%);
@@ -1171,7 +1171,7 @@
     position: absolute;
     right: 50%;
     width: auto; }
-  #banner:before {
+ /* #banner:before {
     -moz-transition: opacity 3s ease;
     -webkit-transition: opacity 3s ease;
     -ms-transition: opacity 3s ease;
@@ -1235,7 +1235,7 @@
     transform: scale(0.99);
     opacity: 0; }
   body.is-preload #banner:before {
-    opacity: 1; }
+    opacity: 1; }*/
 
 /*
 	#banner {
