@@ -15,16 +15,6 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
-<!-- 		<script>
-			window.addEventListener('load', function(){
-				var allimages= document.getElementsByTagName('img');
-				for (var i=0; i<allimages.length; i++) {
-					if (allimages[i].getAttribute('data-src')) {
-						allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
-  				    }
-  				}
-			}, false)
-		</script> -->
 		<script src="js/echo.js"></script>
 		<script>
 			echo.init({
@@ -63,34 +53,12 @@
 
 		<!-- Banner -->
 		<section id="banner">
-<!-- 			<img class="lazy" src="placeholder-image.jpg" data-src="image-to-lazy-load-1x.jpg" data-srcset="image-to-lazy-load-2x.jpg 2x, image-to-lazy-load-1x.jpg 1x" alt="I'm an image!">
- -->
-				<img src="images/banner.jpg"alt="Photo" data-echo="images/banner/index/test_banner.gif"  />
-
- 				<!-- <img src="images/banner.jpg" data-src="images/banner/index/test_banner.gif" /> -->
-				<!-- <img src="images/banner/index/test_banner.gif"> -->
-				<!-- </img> -->
+				<img src="images/index/banner_test.jpg"alt="Photo" data-echo="images/index/test_banner.gif"  />
 				<div class="inner">
-					<h1>Small Obstacle Perception</h1>
+					<h1>Small Obstacle Detection</h1>
 					<p>A research dataset for small obstacle discovery on road scenarios<br />
-					<!--designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p> -->
-					
-			<!-- 	</div>
-				   <div style="position:absolute;z-index:1">
-      				<img src="images/test_banner.gif">
-   				</div> -->
-			</section>
+		</section>
 
-		<!-- 	<section id="banner">
-				<div class="inner">
-					<h2>This is Ion</h2>
-					<p>A free responsive template by <a href="http://templated.co">TEMPLATED</a></p>
-					<ul class="actions">
-						<li><a href="#content" class="button big special">Sign Up</a></li>
-						<li><a href="#elements" class="button big alt">Learn More</a></li>
-					</ul>
-				</div>
-			</section> -->
 
 		<!-- One -->
 			<section id="one" class="wrapper style1">
@@ -99,29 +67,38 @@
 				</header>
 				<div class="container">
 					<div class="row">
-						<div class="4u">
+						<div class="3u">
 							<section class="special box">
-								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/lidar2-min.gif"  />
+								<img class="image fit" src="images/index/lidar_gif.jpg"alt="Photo" data-echo="images/index/lidar2-min.gif"  />
 
 								<!-- <a href="#" class="image fit"><img src="images/lidar2-min.gif" alt="" /></a> -->
 								<h3>Lidar Point clouds</h3>
 								<p></p>
 							</section>
 						</div>
-						<div class="4u">
+						<div class="3u">
 							<section class="special box">
-								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/data_image-min.png"  />
+								<img class="image fit" src="images/index/img_min.png"alt="Photo" data-echo="images/index/img.png"  />
 
 								<!-- <a href="#" class="image fit"><img src="images/data_image-min.png" alt="" /></a> -->
 								<h3>Image</h3>
 								<p></p>
 							</section>
 						</div>
-						<div class="4u">
-							<section class="special box">
-								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/dense_anno.png"  />
 
-								<!-- <a href="#" class="image fit"><img src="images/dense_anno.png" alt="" /></a> -->
+						<div class="3u">
+							<section class="special box">
+								<img class="image fit" src="images/index/depth_min.png"alt="Photo" data-echo="images/index/depth_map.png"  />
+
+								<h3>Depth map</h3>
+								<p></p>
+							</section>
+						</div>
+
+						<div class="3u">
+							<section class="special box">
+								<img class="image fit" src="images/index/dense_min.png"alt="Photo" data-echo="images/index/dense_an.png"  />
+
 								<h3>Dense Annotations</h3>
 								<p></p>
 							</section>
@@ -140,7 +117,7 @@
 					<div class="row">
 						<div class="6u">
 							<section class="special">
-								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/real-min.png"   />
+								<img class="image fit" src="images/index/real_min.png"alt="Photo" data-echo="images/index/real-min.png"   />
 
 								<!-- <a href="#" class="image fit"><img src="images/real-min.png" alt="" /></a> -->
 								<h3>Real Data</h3>
@@ -150,7 +127,7 @@
 						</div>
 						<div class="6u">
 							<section class="special">
-								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/synthetic-min.png"   />
+								<img class="image fit" src="images/index/sim_min.png"alt="Photo" data-echo="images/index/synthetic.png"   />
 
 								<!-- <a href="#" class="image fit"><img src="images/synthetic-min.png" alt="" /></a> -->
 								<h3>Synthetic Data</h3>
