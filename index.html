@@ -15,6 +15,26 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+<!-- 		<script>
+			window.addEventListener('load', function(){
+				var allimages= document.getElementsByTagName('img');
+				for (var i=0; i<allimages.length; i++) {
+					if (allimages[i].getAttribute('data-src')) {
+						allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+  				    }
+  				}
+			}, false)
+		</script> -->
+		<script src="js/echo.js"></script>
+		<script>
+			echo.init({
+		    callback: function (element, op) {
+ 		       console.log(element, 'has been', op + 'ed')
+  	  }
+		});
+
+		// echo.render(); is also available for non-scroll callbacks
+		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -36,15 +56,20 @@
 						<li><a href="examples.html">Examples</a></li>
 						<!-- <li><a href="news.html">Download</a></li> -->
 						<!-- <li><a href="news.html">Submit</a></li> -->
-						<li><a href="#" class="button special">Download</a></li>
+						<li><a href="download.html" class="button special">Download</a></li>
 					</ul>
 				</nav>
 			</header>
 
 		<!-- Banner -->
 		<section id="banner">
-				<img src="images/test_banner.gif">
-				</img>
+<!-- 			<img class="lazy" src="placeholder-image.jpg" data-src="image-to-lazy-load-1x.jpg" data-srcset="image-to-lazy-load-2x.jpg 2x, image-to-lazy-load-1x.jpg 1x" alt="I'm an image!">
+ -->
+				<img src="images/banner.jpg"alt="Photo" data-echo="images/banner/index/test_banner.gif"  />
+
+ 				<!-- <img src="images/banner.jpg" data-src="images/banner/index/test_banner.gif" /> -->
+				<!-- <img src="images/banner/index/test_banner.gif"> -->
+				<!-- </img> -->
 				<div class="inner">
 					<h1>Small Obstacle Perception</h1>
 					<p>A research dataset for small obstacle discovery on road scenarios<br />
@@ -76,21 +101,27 @@
 					<div class="row">
 						<div class="4u">
 							<section class="special box">
-								<a href="#" class="image fit"><img src="images/lidar2-min.gif" alt="" /></a>
+								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/lidar2-min.gif"  />
+
+								<!-- <a href="#" class="image fit"><img src="images/lidar2-min.gif" alt="" /></a> -->
 								<h3>Lidar Point clouds</h3>
 								<p></p>
 							</section>
 						</div>
 						<div class="4u">
 							<section class="special box">
-								<a href="#" class="image fit"><img src="images/data_image-min.png" alt="" /></a>
+								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/data_image-min.png"  />
+
+								<!-- <a href="#" class="image fit"><img src="images/data_image-min.png" alt="" /></a> -->
 								<h3>Image</h3>
 								<p></p>
 							</section>
 						</div>
 						<div class="4u">
 							<section class="special box">
-								<a href="#" class="image fit"><img src="images/dense_anno.png" alt="" /></a>
+								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/dense_anno.png"  />
+
+								<!-- <a href="#" class="image fit"><img src="images/dense_anno.png" alt="" /></a> -->
 								<h3>Dense Annotations</h3>
 								<p></p>
 							</section>
@@ -109,7 +140,9 @@
 					<div class="row">
 						<div class="6u">
 							<section class="special">
-								<a href="#" class="image fit"><img src="images/real-min.png" alt="" /></a>
+								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/real-min.png"   />
+
+								<!-- <a href="#" class="image fit"><img src="images/real-min.png" alt="" /></a> -->
 								<h3>Real Data</h3>
 								<p>We use a calibrated sensor setup to record Image and Lidar data.</p>
 						
@@ -117,7 +150,9 @@
 						</div>
 						<div class="6u">
 							<section class="special">
-								<a href="#" class="image fit"><img src="images/synthetic-min.png" alt="" /></a>
+								<img class="image fit" src="images/banner.jpg"alt="Photo" data-echo="images/synthetic-min.png"   />
+
+								<!-- <a href="#" class="image fit"><img src="images/synthetic-min.png" alt="" /></a> -->
 								<h3>Synthetic Data</h3>
 								<p>We modify Microsoft AirSim to encorporate two different maps, instances of small obstacles and their corresponding Image and Lidar recordings</p>
 							</section>
