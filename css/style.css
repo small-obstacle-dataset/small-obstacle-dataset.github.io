@@ -1189,7 +1189,9 @@
     overflow: hidden;
     position: absolute;
     right: 50%;
-    width: auto; }
+    width: auto;
+	
+	}
  /* #banner:before {
     -moz-transition: opacity 3s ease;
     -webkit-transition: opacity 3s ease;

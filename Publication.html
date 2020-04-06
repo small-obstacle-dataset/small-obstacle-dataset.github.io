@@ -93,8 +93,13 @@
 						<!-- <td> -->
 							<div class="one">
 								<!-- <div class="two" id='unprocessing_image'><img src='images/lazy_load.png'></div> -->
-								<img src='images/lazy_load.png'>
-							</div><!-- 
+								<!--<img src='images/lazy_load.png'>-->
+								<!--<video width="640" height="480" class="lazy" autoplay muted loop playsinline poster="lazy_load.png">
+								<source data-src="images/index/abstract_vid.mp4" type="video/mp4">
+								</video>-->
+								 <iframe width="560" height="315" src="https://www.youtube.com/embed/CjJA8fG4jLI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+<!-- 
 							<script type="text/javascript">
 								function unprocessing_start() {
 									document.getElementById('unprocessing_image').style.opacity = "1";
@@ -119,17 +124,23 @@
 							<br>
 							<em>Under review</em>, IROS 2020
 							<br>
-							<a href="https://arxiv.org/abs/2003.05970">arxiv</a> /
-							<a href="https://arxiv.org/abs/2003.05970">code</a> /
-							<a href="https://www.youtube.com/watch?v=CjJA8fG4jLI">abstract video</a>
+							<a href="https://arxiv.org/abs/2003.05970">arxiv</a> </br>
+<p>Abstract: We present a method to reliably detect small obstacles through a multi-modal framework of sparse LiDAR(VLP-16) and Monocular vision. LiDAR is
+employed to provide additional context in the form of confidence
+maps to monocular segmentation networks. We show significant
+performance gains when the context is fed as an additional
+input to monocular semantic segmentation frameworks.We stress that precise calibration between LiDAR and camera is
+crucial for this task and thus propose a novel Hausdorff distance
+based calibration refinement method over extrinsic parameters.
+As a first benchmark over this dataset, we report our results
+with 73 % instance detection up to a distance of 50 meters
+on challenging scenarios.</p>
+							<!--<a href="https://arxiv.org/abs/2003.05970">code</a> /-->
+							<!--<a href="https://www.youtube.com/watch?v=CjJA8fG4jLI">abstract video</a> </br> </br>-->
 						</td>
 					</tr>
+					
 				</table>
-
-
-
-
-
 			</section>
 
 		</div>
@@ -141,7 +152,7 @@
 			<header class="major">
 				<h2>Citation</h2>
 			</header>
-				If you find this dataset useful in your research, please consider citing us using the below bibtex entry.</br>
+				If you find this dataset useful in your work, please consider citing us using the bibtex below.</br>
 				@article{singh2020lidar,</br>
   				title={LiDAR guided Small obstacle Segmentation},</br>
   				author={Singh, Aasheesh and Kamireddypalli, Aditya and Gandhi, Vineet and Krishna, K Madhava},</br>
