@@ -5,180 +5,202 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>SOD</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<script src="js/echo.js"></script>
-		<script>
-			echo.init({
-		    callback: function (element, op) {
- 		       console.log(element, 'has been', op + 'ed')
-  	  }
+<head>
+	<title>SOD</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/echo.js"></script>
+	<!-- <script src="js/"></script> -->
+
+	<script>
+		echo.init({
+			callback: function (element, op) {
+				console.log(element, 'has been', op + 'ed')
+			}
+		});
+		document.addEventListener("DOMContentLoaded", function() {
+			var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+			if ("IntersectionObserver" in window) {
+				var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+					entries.forEach(function(video) {
+						if (video.isIntersecting) {
+							for (var source in video.target.children) {
+								var videoSource = video.target.children[source];
+								if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+									videoSource.src = videoSource.dataset.src;
+								}
+							}
+
+							video.target.load();
+							video.target.classList.remove("lazy");
+							lazyVideoObserver.unobserve(video.target);
+						}
+					});
+				});
+
+				lazyVideos.forEach(function(lazyVideo) {
+					lazyVideoObserver.observe(lazyVideo);
+				});
+			}
 		});
 
-		// echo.render(); is also available for non-scroll callbacks
-		</script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-	</head>
-	<body id="top">
+		
+	</script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-xlarge.css" />
+	</noscript>
+</head>
+<body id="top">
 
-		<!-- Header -->
+	<!-- Header -->
 
-		<!--<img src="./images/logo.png" class="img-fluid" alt="Responsive image">-->
-			<header id="header" class="skel-layers-fixed">
-				<h1><a href="https://robotics.iiit.ac.in/">Robotics Research Center - IIIT-H</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<!-- <li><a href="index.html">News</a></li> -->
-						<li><a href="no-sidebar.html">Overview</a></li>
-						<li><a href="examples.html">Examples</a></li>
-						<!-- <li><a href="contact.html">Contact</a></li> -->
-						<li><a href="download.html" class="button special">Download</a></li>
-					</ul>
-				</nav>
-			</header>
+	
+	<header id="header" class="skel-layers-fixed">
+		<h1><a href="https://robotics.iiit.ac.in/">Robotics Research Center - IIIT-H</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Dataset_overview.html">Dataset Overview</a></li>
+				<li><a href="Publication.html">Publication</a></li>
+				<li><a href="download.html" class="button special">Download</a></li>
+			</ul>
+		</nav>
+	</header>
 
-		<!-- Banner -->
-		<section id="banner">
-				<img src="images/index/banner_test.png" data-echo="images/index/test_banner.gif"  />
-				<div class="inner">
-					<h1>Small Obstacle Detection</h1>
-					<p>A research dataset for small obstacle discovery on road scenarios<br />
+	<!-- Banner -->
+	<section id="banner">
+		<video class="lazy" autoplay muted loop playsinline poster="lazy_load.png">
+			<source data-src="images/index/seq_3.mp4" type="video/mp4">
+			</video>
+
+			<!-- <video autoplay loop muted playsinline src="seq_3.mp4"></video> -->
+			<div class="inner">
+				<h1>Small Obstacle Detection</h1>
+				<p>A research dataset for small obstacle discovery on road scenarios.</p><br/>
+				
+			</div>
 		</section>
 
 
 		<!-- One -->
-			<section id="one" class="wrapper style1">
-				<header class="major">
-					<h2>Multi-modal perception for small obstacles</h2>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="3u">
-							<section class="special box">
-								<img class="image fit" data-echo="images/index/lidar2-min.gif"  src="images/lazy_load.png"/>
-								<h3>Lidar Point clouds</h3>
-								<p></p>
-							</section>
-						</div>
-						<div class="3u">
-							<section class="special box">
-								<img class="image fit" data-echo="images/index/img_min.png" src="images/lazy_load.png"/>
-								<h3>Image</h3>
-								<p></p>
-							</section>
-						</div>
+		<section id="one" class="wrapper style1">
+			<header class="major">
+				<h2>Multi-modal perception for small obstacles</h2>
+			</header>
+			<div class="container">
+				<div class="row">
+					<div class="4u">
+						<section class="special box">
+							<img class="image fit" data-echo="images/index/lidar2-min.gif"  src="images/lazy_load.png"/>
+							<h3>Lidar Point clouds</h3>
+							<p></p>
+						</section>
+					</div>
+					<div class="4u">
+						<section class="special box">
+							<img class="image fit" data-echo="images/index/img_min.png" src="images/lazy_load.png"/>
+							<h3>Image</h3>
+							<p></p>
+						</section>
+					</div>
 
-						<div class="3u">
-							<section class="special box">
-								<img class="image fit" data-echo="images/index/depth_min.png" src="images/lazy_load.png"  />
 
-								<h3>Depth map</h3>
-								<p></p>
-							</section>
-						</div>
+					<div class="4u">
+						<section class="special box">
+							<img class="image fit" data-echo="images/index/dense_min.png" src="images/lazy_load.png" />
 
-						<div class="3u">
-							<section class="special box">
-								<img class="image fit" data-echo="images/index/dense_min.png" src="images/lazy_load.png" />
-
-								<h3>Dense Annotations</h3>
-								<p></p>
-							</section>
-						</div>
+							<h3>Dense Annotations</h3>
+							<p></p>
+						</section>
 					</div>
 				</div>
-			</section>
-			
+			</div>
+		</section>
+		
 		<!-- Two -->
-			<section id="two" class="wrapper style2">
-				<header class="major">
-					<h2>Real and Synthetic Datapoints</h2>
-					<p></p>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="6u">
-							<section class="special">
-								<img class="image fit" src="images/lazy_load.png" data-echo="images/index/real-min.png"   />
+		<section id="two" class="wrapper style2">
+			<header class="major">
+				<h2>Real and Synthetic Datapoints</h2>
+				<p></p>
+			</header>
+			<div class="container">
+				<div class="row">
+					<div class="6u">
+						<section class="special">
+							<img class="image fit" src="images/lazy_load.png" data-echo="images/index/real.png"   />
 
-								<!-- <a href="#" class="image fit"><img src="images/real-min.png" alt="" /></a> -->
-								<h3>Real Data</h3>
-								<p>We use a calibrated sensor setup to record Image and Lidar data.</p>
-						
-							</section>
-						</div>
-						<div class="6u">
-							<section class="special">
-								<img class="image fit" data-echo="images/index/synth_data.png" src="images/lazy_load.png"   />
+							<h3>Real Data</h3>
+							<p>Small obstacles on road with challenging lighting and occlusion.</p>
+							
+						</section>
+					</div>
+					<div class="6u">
+						<section class="special">
+							<img class="image fit" data-echo="images/index/synthetic.jpg" src="images/lazy_load.png"   />
 
-								<!-- <a href="#" class="image fit"><img src="images/synthetic-min.png" alt="" /></a> -->
-								<h3>Synthetic Data</h3>
-								<p>We modify Microsoft AirSim to encorporate two different maps, instances of small obstacles and their corresponding Image and Lidar recordings</p>
-							</section>
-						</div>
+							
+							<h3>Synthetic Data</h3>
+							<p>Synthetic data with small obstacles on road, collected using Microsoft AirSim in Unreal Engine.</p>
+						</section>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
 		<!-- Three -->
-			<section id="three" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div>
-							<section>
-								<h2>Why small obstacle discovery ?</h2>
-								<!-- <a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a> -->
-								<p>Advances in traditional Computer Vision problems, with the advent of Deep Learning, have notably percolated into industrial applications, particularly within the domain of Perception for Autonomous Intelligent Systems. Many computer vision tasks have been successfully tackled with Deep Learning techniques, particularly using Deep Convolutional Neural Networks.  The state-of-the-art in Object-detection, semantic-segmentation and instance-segmentation has been well researched and documented. These networks act as function approximators for various features present in the RGB image. Their abilities are particularly accentuated when the image has distinct features, which is why networks are able to pick up signal from noise.</p>
-								<p>Small obstacles fall under the precarious position of being randomly classified, primarily because of a certain degree of lack of discernible features. Due to a general skew in their pixel frequency and their size within the frame, it seems difficult for neural networks to approximate small obstacle functions. Naturally, the question then arises, how do we pick up on small obstacle signal?</p>
-								<p>We release this dataset to pose this question to the research community. We provide two modes of sensor data. Dense RGB information, which is how traditionally this problem has been tackled, and Sparse Lidar depth. Images have been densely annotated. As of now, we restrict the labels to multiple instances of small obstacles, road and off-road. We also plan to release our benchmark on this dataset</p>
-							</section>
-						</div>
-					
+		<section id="three" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div>
+						<section>
+							<h2>Small Obstacle Dataset</h2>
+								<p>This dataset addresses the problem of detecting unexpected small obstacles on the road caused by construction activites, lost cargo and other stochastic scenarios. Instances of such obstacles are rare in popular autonomous driving datasets (KITTI, Waymo, Cityscapes) and thus methods trained on such datasets might fail to address this problem adequately. We thus introduce this dataset to the research community comprising of over 3000 annotated frames, taken in challenging scenarios with varied set of small obstacles.</p>
+
+								<p> Stereo depth has been previously employed[<a href="http://www.6d-vision.com/lostandfounddataset"> Lost and Found </a>Dataset] as a complementary input to Image for this problem, however the depth obtained was limited to 20 metres and could further prove erroneous due to lack of discernible features of small objects. In this dataset, we utilise a highly accurate but sparse LiDAR sensor to obtain depths upto a range of 75 m. Pixel-wise Image annotations for 3 semantic classes: small obstacle, road, and off-road are available for about 3000 frames. We provide precise extrinsics calibration matrix between camera and LiDAR (refer to Publication section for our methodology) which can be used to obtain Point-Cloud labels from given Image annotations. The dataset can thus be used to evaluate individual LiDAR/Image methods or a multi-modal approach for this task. We further invite contributions for the task of domain adaptation and release a synthetic version of the small obstacle dataset collected on custom city maps in Unreal Engine. Links to the dataset and code for the publication can be accessed from the download section. </p>
+						</section>
 					</div>
+					
 				</div>
-			</section>	
-			
+			</div>
+		</section>	
+		
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<div class="row double">
-						<div class="6u">
-							<div class="row collapse-at-2">
-								<div class="12u">
-									<h3>Contact:</h3>
-									<ul class="alt">
-										<a href="https://www.github.com/ashdtu">Aasheesh Singh</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="align-right" href="https://www.github.com/kzernobog">Aditya Kamireddypalli</a></li>
-									</ul>
-								</div>
-								<div class="6u">
-									<!--<h3>Faucibus</h3>
-									<ul class="alt">
-										<li><a href="#">Nascetur nunc varius</a></li>
-										<li><a href="#">Vis faucibus sed tempor</a></li>
-										<li><a href="#">Massa amet lobortis vel</a></li>
-										<li><a href="#">Nascetur nunc varius</a></li>
-									</ul>-->
+		<footer id="footer">
+			<div class="container">
+				<div class="row double">
+					<div class="12u">
+						<div class="row collapse-at-2">
+							<div class="12u">
+								<h3>Team</h3>
+								<div class ="row">
+									<!-- <ul class="alt"> -->
+										<div class = "4u">
+											<a href="https://www.github.com/ashdtu">Aasheesh Singh</a></li>
+										</div> 
+										<div class = "4u">
+											<a href="https://www.github.com/kzernobog">Aditya Kamireddypalli</a>
+										</div>
+										<div class = "4u">
+											<a href="https://www.github.com/AryanSakaria">Aryan Sakaria</a></li>
+										</div>
+										<!-- </ul> -->
+									</div>
+									
 								</div>
 							</div>
+							
 						</div>
-	
+						
 					</div>
-				
-				</div>
-			</footer>
+				</footer>
 
-	</body>
-</html>
+			</body>
+			</html>

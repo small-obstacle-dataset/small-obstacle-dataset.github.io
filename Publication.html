@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Ion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+	<title>SOD</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/echo.js"></script>
+
+
+	<script>
+		echo.init({
+			callback: function (element, op) {
+				console.log(element, 'has been', op + 'ed')
+			}
+		});
+		document.addEventListener("DOMContentLoaded", function() {
+			var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+			if ("IntersectionObserver" in window) {
+				var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+					entries.forEach(function(video) {
+						if (video.isIntersecting) {
+							for (var source in video.target.children) {
+								var videoSource = video.target.children[source];
+								if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+									videoSource.src = videoSource.dataset.src;
+								}
+							}
+
+							video.target.load();
+							video.target.classList.remove("lazy");
+							lazyVideoObserver.unobserve(video.target);
+						}
+					});
+				});
+
+				lazyVideos.forEach(function(lazyVideo) {
+					lazyVideoObserver.observe(lazyVideo);
+				});
+			}
+		});
+
+		
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-xlarge.css" />
+	</noscript>
+</head>
+<body id="top">
+
+
+	<header id="header" class="skel-layers-fixed">
+		<h1><a href="https://robotics.iiit.ac.in/">Robotics Research Center - IIIT-H</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Dataset_overview.html">Dataset Overview</a></li>
+				<li><a href="Publication.html">Publication</a></li>
+				<li><a href="download.html" class="button special">Download</a></li>
+			</ul>
+		</nav>
+	</header>
+
+
+	<!-- Main -->
+	<section id="main" class="wrapper style1">
+		<header class="major">
+			<h2>Publication</h2>
+			<!--<p>Tempus adipiscing commodo ut aliquam blandit</p>-->
+		</header>
+		<div class="container">
+			<section>
+
+
+
+				<table>
+					<tr onmouseout="unprocessing_stop()" onmouseover="unprocessing_start()">
+						<td style="padding:20px;width:25%;vertical-align:middle">
+						<!-- <td> -->
+							<div class="one">
+								<!-- <div class="two" id='unprocessing_image'><img src='images/lazy_load.png'></div> -->
+								<img src='images/lazy_load.png'>
+							</div><!-- 
+							<script type="text/javascript">
+								function unprocessing_start() {
+									document.getElementById('unprocessing_image').style.opacity = "1";
+								}
+
+								function unprocessing_stop() {
+									document.getElementById('unprocessing_image').style.opacity = "0";
+								}
+								unprocessing_stop()
+							</script> -->
+						</td>
+						<td style="padding:20px;width:75%;vertical-align:middle">
+						<!-- <td> -->
+							
+							<papertitle><strong>LiDAR guided Small obstacle segmentation</strong></papertitle>
+							</a>
+							<br>
+							<a href="https://medium.com/aasheesh-singh">Aasheesh Singh*</a>,
+							<a href="https://www.github.com/kzernobog">Aditya Kamireddypalli*</a>,
+							<a href="https://faculty.iiit.ac.in/~vgandhi/">Vineet Gandhi</a>,
+							<a href="https://robotics.iiit.ac.in/publications.html">K Madhava Krishna</a>,
+							<br>
+							<em>Under review</em>, IROS 2020
+							<br>
+							<a href="https://arxiv.org/abs/2003.05970">arxiv</a> /
+							<a href="https://arxiv.org/abs/2003.05970">code</a> /
+							<a href="https://www.youtube.com/watch?v=CjJA8fG4jLI">abstract video</a>
+						</td>
+					</tr>
+				</table>
+
+
+
+
+
+			</section>
+
+		</div>
+	</section>
+
+	<section id="three" class="wrapper style1">
+			<div class="container">
+				<hr class="major" />
+			<header class="major">
+				<h2>Citation</h2>
+			</header>
+				If you find this dataset useful in your research, please consider citing us using the below bibtex entry.</br>
+				@article{singh2020lidar,</br>
+  				title={LiDAR guided Small obstacle Segmentation},</br>
+  				author={Singh, Aasheesh and Kamireddypalli, Aditya and Gandhi, Vineet and Krishna, K Madhava},</br>
+  				journal={arXiv preprint arXiv:2003.05970},</br>
+  				year={2020}
+				}
+			</div>
+				
+			</section>
+	<!-- Main -->
+
+
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<div class="row double">
+				<div class="6u">
+					<div class="row collapse-at-2">
+						<div class="6u">
+									<!--<h3>Accumsan</h3>
+									<ul class="alt">
+										<li><a href="#">Nascetur nunc varius</a></li>
+										<li><a href="#">Vis faucibus sed tempor</a></li>
+										<li><a href="#">Massa amet lobortis vel</a></li>
+										<li><a href="#">Nascetur nunc varius</a></li>
+									</ul>-->
+								</div>
+								<div class="6u">
+									<!--<h3>Faucibus</h3>
+									<ul class="alt">
+										<li><a href="#">Nascetur nunc varius</a></li>
+										<li><a href="#">Vis faucibus sed tempor</a></li>
+										<li><a href="#">Massa amet lobortis vel</a></li>
+										<li><a href="#">Nascetur nunc varius</a></li>
+									</ul>-->
+								</div>
+							</div>
+						</div>
+						<div class="6u">
+							<!--<h2>Aliquam Interdum</h2>
+								<p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>-->
+							<!--<ul class="icons">
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+							</ul>-->
+						</div>
+					</div>
+
+				</div>
+			</footer>
+		</body>
